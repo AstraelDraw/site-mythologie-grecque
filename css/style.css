@@ -1,0 +1,509 @@
+html{
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: 1.1em;
+	color: white;
+	font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+	background-color: #eeeeee;
+	background: linear-gradient(to bottom, #03071a, #1E3A8A); /*Fond avec un dégradé simple*/
+	margin-top: 100px; /*Pour laisser de la place au header et au footer*/
+	margin-bottom: -10px;
+}
+
+/*HEADER*/
+
+header{
+	background-color: #03071a;
+	width: 100%;
+	position: fixed;
+	top:0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	z-index: 10;		/*Place le header en priorité, pour régler le bug avec les animations qui étaient au dessus du header*/
+}
+
+header nav{
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	margin-right: 50px;	
+}
+
+nav ul{
+	display: flex;
+	list-style: none;
+	margin-bottom: 5px;
+}
+
+header nav li a{
+	display: inline-block;
+	text-decoration: none;
+	margin: 10px;
+	color: goldenrod;
+	padding: 10px;
+	border-radius: 20px;
+	transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;		/*Animations pour les liens du nav, changer la couleur et le background de manière "smooth"*/
+	transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+header nav li a:hover {
+	color: white;
+	background-color: rgba(12, 47, 82, 0.8);
+}
+
+.nav-container{
+	display: block;	/*Les deux nav sont l'un sous l'autre*/
+}
+
+.nav2 a{
+	color: gray;
+	margin: 0;
+}
+
+h1{
+	display: flex;
+	margin-left: 50px;
+}
+
+h1 a{
+	text-decoration: none;
+	color:goldenrod;		/*Lien sur le h1 comme la plupart des sites*/
+	font-style: italic;
+}
+
+/*ACCUEIL*/
+
+main{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.titre{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	padding-bottom: 0px;
+	border-bottom: 5px solid goldenrod;
+}
+
+.titre img{
+	height: 600px;
+}
+
+.titre h2{
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: uppercase;		/*Met tout le texte en majuscules*/
+}
+
+.accueil_dieu{
+	display: flex;
+	align-items: center;
+	color: black;
+	border-radius: 20px;
+	gap: 30px;
+	padding: 40px;
+	background: linear-gradient(to right, rgba(177, 132, 18, 0.032), rgb(255, 255, 255)); /*Fond en dégradé pour l'sthétique*/
+	transition: transform 0.3s ease-in-out;
+}
+
+.accueil_dieu:hover, .accueil_dieu_droite:hover {
+    transform: scale(1.05);
+	background-color: rgba(255, 255, 255, 0.408);		/*Transforme la taille et la couleur du cadre, avec un z-index qui évite le bug*/
+	z-index: 5;
+	box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+.accueil_dieu img, .accueil_dieu_droite img{
+	height: 300px;
+	border-radius: 20px;
+	border-bottom: 5px solid gold;
+}
+
+.accueil_dieu p, .accueil_dieu_droite p{
+	text-align: justify;
+}
+
+.accueil_dieu a, .accueil_dieu_droite a{
+	display: flex;
+	justify-content: end;
+	text-decoration: none;
+	color: goldenrod;
+	margin-top:20px;
+}
+
+.accueil_dieu a:hover{
+	color: gold;
+}
+
+.accueil_dieu_droite a:hover{
+	color: gold;
+}
+
+.accueil_dieu_droite {
+    display: flex;
+    align-items: center;
+    color: black;
+    border-radius: 20px;
+    gap: 30px;
+    padding: 40px;
+    background: linear-gradient(to left, rgba(177, 132, 18, 0.032), rgb(255, 255, 255)); 
+    transition: transform 0.3s ease-in-out;
+    flex-direction: row-reverse;
+}
+
+.premier h2{
+	margin-top:100px;
+	display: flex;
+	justify-content: center;
+	font-size: 40px;
+}
+
+/*CATEGORIE DIEUX*/
+
+.dieu-container {
+    display: flex;
+	flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+	color: #03071a;
+}
+
+.dieu-card {
+    background-color: #f5f5f5d2;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+	max-width: 500px;
+}
+
+.img_dieu {
+    height: 300px;
+	border-bottom: 2px solid black;
+}
+
+.dieu_card ul{
+	list-style: none;
+}
+.details p,
+.details ul {
+    margin-top: 20px;
+    text-align: left;
+	list-style: none;
+}
+
+
+/*CATEGORIE LIEUX*/
+
+.article2 {
+    display: flex;
+    flex-wrap: wrap;		/*Pour que les éléments ne dépassent pas*/
+    justify-content: center;
+    gap: 20px;
+    color: white;
+}
+
+.lieux {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 60%;			/*Laisse la place au aside*/
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.lieu-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.img_lieu {
+    height: 200px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease-in-out;
+}
+
+.img_lieu:hover {
+    transform: scale(1.05);
+	border: 2px solid goldenrod;
+
+}
+
+.infos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+.infos li{
+	list-style: none;
+	margin-top: 10px;
+}
+
+.aside_lieux {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    width: 200px;
+    height: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.065);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+iframe{
+	border-radius: 20px;
+}
+
+/*CATEGORIE LIVRES*/
+
+.Livres{
+	display: flex;
+	align-items: center;
+	border-bottom: 5px solid goldenrod;
+	border-radius: 10px;
+	padding-bottom: 50px;
+}
+
+.Livres .livre_container h3{
+	color: goldenrod;
+	font-family: fantasy;
+}
+
+.avis{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	color: goldenrod;
+}
+
+.resume{
+	width: 600px;
+	margin: 20px;
+}
+
+.livre_container{
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	border-bottom: 2px solid goldenrod;
+	border-left: 2px solid goldenrod;
+	border-radius: 20px;
+	margin: 20px;
+	transition: transform 0.5s ease-in-out;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.livre_container:hover{
+	transform: scale(1.2);
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7); 
+}
+
+.comm_container {
+    margin-top: 20px;
+}
+
+.commentaire {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid goldenrod;
+	background-color: #dddddddd;
+    border-radius: 5px;
+}
+
+.comm_container img{
+	height: 50px;
+	border-radius: 50px;
+	margin: 0px 10px;
+	border: 2px solid goldenrod;
+}
+
+.img_livre{
+	height: 300px;
+}
+
+.comm_2 {
+    display: flex;
+    align-items: center;
+	background-color: #03071a;
+	border-radius: 10px;
+}
+
+.comm_texte{
+	padding: 20px;
+	color: black;
+	border-left: 2px solid white;
+	border-bottom: 2px solid white;
+	border-radius: 10px;
+}
+
+.comm_pseudo{
+	padding: 10px;
+	border-radius: 20px;
+}
+
+.comm_pseudo:hover{
+	color: goldenrod;
+}
+
+.Livres textarea{
+	color: gray;
+	width: 350px;
+	max-width: 350px;
+	height: 50px;
+}
+
+.Livres textarea:hover{
+	color: #03071a;
+}
+
+button{
+	padding: 10px;
+	border-radius: 20px;
+	background-color: goldenrod;
+	border: 2px solid goldenrod;
+	color: white;
+	transition: background-color 0.3s ease-in-out;
+}
+
+button:hover{
+	border: 2px solid gold;
+	background-color: gold;
+}
+
+/*CONTACTS*/
+
+.contact-form{
+	display: flex;
+	justify-content: center;
+	margin: 50px;
+	gap: 50px;
+}
+
+input{
+	width: 100%;
+    height: 20px;
+	width: 500px;
+    padding: 10px;
+    border-radius: 10px; 
+}
+
+.contact-form textarea{
+	width: 100%;
+    height: 150px;
+	width: 500px;
+    padding: 10px;
+    border-radius: 10px; 
+}
+
+label{
+	display: block;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+button{
+	display: block;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+aside{
+	width: 400px;
+	background-color: #03071a9e;
+	border-radius: 50px;
+}
+
+aside ul{
+	list-style: none;
+	margin-top:40px;
+}
+
+aside li{
+	margin: 20px 0px;
+}
+
+/*FOOTER*/
+
+footer {
+    background-color: #03071a;
+    color: white;
+    padding: 20px;
+	width: 1200px;
+    margin: 10px auto;
+	margin-top: 50px;
+	display: flex;
+	align-items: center;
+	text-align: start; 
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+footer p{
+	color: goldenrod;
+}
+
+.colonne_container {
+    display: flex;
+    justify-content:start;
+	gap: 100px;
+    padding: 20px, 0px;
+}
+
+.colonne {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.colonne ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.colonne li{
+	margin-bottom: 20px;
+}
+
+.colonne a {
+    text-decoration: none;
+    color: #788192;
+    transition: color 0.3s;
+	
+}
+
+.colonne a:hover {
+    color: goldenrod;
+}
+
+footer img{
+	height: 40px;
+	background-color: goldenrod;
+	padding: 2px;
+	border-radius: 50px;
+	transition: background-color 0.5s ease;
+}
+
+footer img:hover{
+	background-color: white;
+}
+
+#ancre {
+    padding-top: 100px; /*Pour que l'ancre ramène vraiment tout en haut*/
+}
