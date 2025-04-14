@@ -1,7 +1,0 @@
-{
-    "name": "ton/projet",
-    "description": "Site dynamique avec PHP et Twig",
-    "require": {
-        "twig/twig": "^3.0"
-    }
-}
